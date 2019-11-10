@@ -617,10 +617,11 @@ body.offcanvas .fh5co-nav-toggle {
 }
 
 .blog-entry .desc .lead {
-    font-size: 11px;
+    font-size: 26px;
     text-transform: uppercase;
     letter-spacing: 2px;
     color: #000;
+    float: right;
 }
 
 .blog-entry:hover .blog-img img {
