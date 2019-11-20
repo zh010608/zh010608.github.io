@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>Document</title>
+		<link rel="stylesheet" href="https://at.alicdn.com/t/font_1511537_14kfbkljs32.css">
+		<link rel="stylesheet" href="swiper.min.css">
+		<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				list-style: none;
+				text-decoration: none;
+				outline: none;
+			}
+			
+			.clearfix:after,
+			.clearfix:before {
+				content: '';
+				display: table;
+			}
+			
+			.clearfix:after {
+				clear: both;
+			}
+			
+			.fl {
+				float: left;
+			}
+			
+			.fr {
+				float: right;
+			}
+			
+			.cd {
+				margin-left: 40px;
+				display: table-cell;
+			}
+			
+			.cc {
+				font: normal 600 15px / 23px "微软雅黑", Helvetica, Arial, Verdana, sans-serif;
+				padding: 16px 0;
+				display: table-cell;
+				color: #ffffff;
+			}
+			
+			.footer {
+				width: 30%;
+				height: 100%;
+				float: left;
+				margin: 0 40px 0 0;
+			}
+			
+			.no1 {
+				width: 100%;
+				min-height: 300px;
+				position: relative;
+				overflow: hidden;
+			}
+			
+			.no2 {
+				width: 100%;
+				position: absolute;
+				transition: all .3s;
+				top: 0;
+			}
+			
+			.l {
+				width: 70px;
+				line-height: 100px;
+				background: rgba(0, 0, 0, 0.5);
+				position: absolute;
+				right: 70px;
+				color: #FFFFFF;
+				text-align: center;
+				font-size: 30px;
+				bottom: 0;
+				margin-top: -50px;
+			}
+			
+			.r {
+				width: 70px;
+				line-height: 100px;
+				background: rgba(0, 0, 0, 0.5);
+				position: absolute;
+				right: 0;
+				color: #FFFFFF;
+				text-align: center;
+				font-size: 30px;
+				bottom: 0;
+				margin-top: -50px;
+			}
+			
+			.swiper-container {
+				width: 590px;
+				max-height: 491px;
+			}
+			
+			.swiper-wrapper {
+				width: 1280px;
+			}
+			
+			.swiper-slide {
+				width: 285;
+				height: 210px;
+			}
+			
+			.swiper-slide img {
+				width: 100%;
+				height: 210px;
+			}
+			
+			.el-carousel__item h3 {
+				color: #475669;
+				font-size: 18px;
+				opacity: 0.75;
+				line-height: 300px;
+				margin: 0;
+			}
+			
+			.el-carousel__item:nth-child(2n) {
+				background-color: #99a9bf;
+			}
+			
+			.el-carousel__item:nth-child(2n+1) {
+				background-color: #d3dce6;
+			}
+			
+			.iw_poi_title {
+				color: #CC5522;
+				font-size: 14px;
+				font-weight: bold;
+				overflow: hidden;
+				padding-right: 13px;
+				white-space: nowrap
+			}
+			
+			.iw_poi_content {
+				font: 12px arial, sans-serif;
+				overflow: visible;
+				padding-top: 4px;
+				white-space: -moz-pre-wrap;
+				word-wrap: break-word
+			}
+			
+			[v-cloak] {
+				display: none;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="box" v-cloak="" style="position: relative;">
+			<div style="width: 100%;position: fixed;">
+				<div style="max-width: 1280px; margin: 0 auto;height: 78px;min-height: 78px;">
+					<div class="fl" style="width:300px;background-color:transparent; padding: 12px 0;">
+						<a style="display: table-cell;" href="#">
+							<img style="max-width: 100%;max-height: 50px;" src="https://ccdn.goodq.top/caches/b18d463ab761d9369e21aaf6ec1c2764/aHR0cHM6Ly81ZDBjNzNmODdkMzc4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDYvMzM0MDdjY2U4MDk5MTljNjZhZmNjZDYxMWJkNTIxZDkucG5n.png">
+						</a>
+					</div>
+					<div class="fl" style="min-width: 804px;max-height: 50px; text-align: right; padding: 14px 0;">
+						<ul class="fr" style="display: table-cell;">
+							<li class="fl cd">
+								<a class="cc" href="#/">首页</a>
+							</li>
+							<li class="fl cd">
+								<a class="cc" href="#/no2">关于</a>
+							</li>
+							<li class="fl cd">
+								<a class="cc" href="#/no3">路线</a>
+							</li>
+							<li class="fl cd">
+								<a class="cc" href="#/no4">攻略</a>
+							</li>
+							<li class="fl cd">
+								<a class="cc" href="#/no5">联系</a>
+							</li>
+						</ul>
+					</div>
+					<div class="fr" style="width: 86px; display: table-cell; padding: 19.5px 0;">
+						<img class="fr" style="text-align: right; padding: 12px 0;vertical-align: middle;max-width: 100%;width: auto;height: auto;" src="https://ccdn.goodq.top/caches/b18d463ab761d9369e21aaf6ec1c2764/aHR0cHM6Ly81ZDBjNzNmODdkMzc4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDYvZGE4MWFlMzI1NjNiMWNhM2M1NjJlNGYyYjBmYjU5ZDEtMjN4MTUucG5n.png" alt="">
+					</div>
+				</div>
+			</div>
+			<div style="width: 100%;">
+				<div>
+					<div>
+						<router-view></router-view>
+					</div>
+				</div>
+			</div>
+			<div style="width: 100%;max-height: 390px;background: #13304a;">
+				<div style="border-bottom: solid 1px rgb(66, 89, 110); ">
+					<div style="max-width: 1280px; margin: 0 auto; height: 328px;padding-top: 70px;box-sizing: border-box; ">
+						<div style="height: 168px; ">
+							<div class="footer ">
+								<h2 style="font-size: 30px;color: white; ">TRAVEL</h2>
+								<p style="color: #ccdae1;font-size: 12px;line-height: 36px;padding-top: 30px; ">我公司会以安全、快乐、环保为理念，以敬业、诚信、善良</br>为本，期待与全国各地的户外公司、户外俱乐部、旅行社进</br>s行合作。</p>
+							</div>
+							<div class="footer ">
+								<h2 style="font-size: 30px;color: white; ">CONTACT</h2>
+								<ul style="color: #ccdae1;font-size: 12px;line-height: 36px;padding-top: 30px; ">
+									<li><span style="background-color:rgb(55, 156, 244);height: 1px;width: 15px;display: inline-block;vertical-align: middle;margin-right: 12px; "></span>深圳市南京路双港码头6楼</li>
+									<li><span style="background-color:rgb(55, 156, 244);height: 1px;width: 15px;display: inline-block;vertical-align: middle;margin-right: 12px; "></span>123@admin.com</li>
+									<li><span style="background-color:rgb(55, 156, 244);height: 1px;width: 15px;display: inline-block;vertical-align: middle;margin-right: 12px; "></span>011-555-12345</li>
+								</ul>
+							</div>
+							<div class="footer ">
+								<div style="height: 70px; ">
+									<span style="background-repeat: no-repeat;height: 64px;width: 64px;background-position: -320px 0;display: inline-block;background-image: url( 'https://fast.qifeiye.com/FeiEditor/images/icon/social_icon_64x64.png'); "></span>
+									<span style="background-repeat: no-repeat;height: 64px;width: 64px;background-position: -384px 0;display: inline-block;background-image: url( 'https://fast.qifeiye.com/FeiEditor/images/icon/social_icon_64x64.png'); "></span>
+									<span style="background-repeat: no-repeat;height: 64px;width: 64px;background-position: -64px 0;display: inline-block;background-image: url( 'https://fast.qifeiye.com/FeiEditor/images/icon/social_icon_64x64.png'); "></span>
+									<span style="background-repeat: no-repeat;height: 64px;width: 64px;background-position: 0 0;display: inline-block;background-image: url( 'https://fast.qifeiye.com/FeiEditor/images/icon/social_icon_64x64.png'); "></span>
+								</div>
+								<p style="color: #ccdae1;font-size: 12px;line-height: 36px;padding-top: 30px; ">强大专业的户外产品汇集平台，为您提供徒步、登山、露营、摄影、航海、越野等多种方式探索大自然。</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div style=" padding: 15px 0;">
+					<div style="width: 1280px; margin: 0 auto;font-size: 12px;color: white;">
+						Copyright 2019 户外探险模板 All rights reserved
+					</div>
+				</div>
+			</div>
+		</div>
+		<template id="lee">
+			<div style="color: white;">
+				<div style="height: 106px;">
+					<p style="font-size: 16px;">海拔</p>
+					<p style="font-size: 26px;font-weight: 500;padding-top: 10px;">1650m</p>
+				</div>
+				<div style="height: 106px;">
+					<p style="font-size: 16px;">路线</p>
+					<p style="font-size: 26px;font-weight: 500;padding-top: 10px;">7</p>
+				</div>
+				<div style="height: 104px;">
+					<p style="font-size: 16px;">游客/年</p>
+					<p style="font-size: 26px;font-weight: 500;padding-top: 10px;">3000+</p>
+				</div>
+			</div>
+		</template>
+		<!-- 路由模块 -->
+		<template id="no1">
+			<div style="width: 100%;">
+				<div style="width: 100%;min-height: 969px;background-image: url('https://ccdn.goodq.top/caches/b18d463ab761d9369e21aaf6ec1c2764/aHR0cHM6Ly81ZDBjNzNmODdkMzc4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDYvNzdiZjlhODA2NWZhYjQ0ZDFhMDUxOTRkYTlhNjU3ODguanBn.jpg'); background-repeat:no-repeat; background-size:cover; background-attachment:no-scroll; background-position:right center;">
+					<div style="max-width: 1280px;height: 814px;margin: 0 auto;">
+						<div style="width: 50%;float: left;">
+							<h3 style="color: white;font-size: 70px;min-height: 635px;padding-top: 222px;box-sizing: border-box;">探索<br />山野秘境<br />发现纯粹自我|</h3>
+							<p style="font-size: 12px;color: white;line-height: 30px;">背着背包的路上，听过许多故事，见过旅行风景。<br />流转的时光，都成为命途中的点缀，<br />不言不语都是好风景。</p>
+							<div style="font-family: Oswald;color: white;font-size: 16px;padding-top: 35px;vertical-align: top;">CUSTOM <span style="display: inline-block;width: 15px;height: 4px;background: #379cf4;"></span></div>
+						</div>
+						<div style="width: 50%;float: left;padding-top: 222px;box-sizing: border-box;">
+							<div>
+								<shuzi></shuzi>
+							</div>
+							<div>
+								<lunbo></lunbo>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div style="height: 631px;">
+					<div style="position: relative; max-width: 1280px;height: 490px;margin: 0 auto;padding-top: 100px;">
+						<div style="width: 895px;height: 490px;float: left;">
+							<lunbo2></lunbo2>
+						</div>
+						<div style="width: 343px;height: 490px;float: right;">
+							<div style="font-family: Oswald;font-size: 36px;font-weight: bold;font-style: normal;color: #13304a;">RECOMM</div>
+							<div style="font-size: 14px;color: #596e80;padding-top: 30px;">精选当季热门目的地</div>
+							<p style="font-size: 12px;color: rgb(19, 48, 74);line-height: 30px;padding-top: 50px;">偶尔为街头独特的风景驻足，偶尔因高山流水的美丽停留，偶尔被惊鸿一瞥的美丽吸引；或者在春暖花开时，或者在河边放下一盏写着心愿的河灯，祝愿一切安好。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</template>
+		<template id="no2">
+			<div>
+				<div style="width: 100%;min-height: 460px;background-image: url('https://ccdn.goodq.top/caches/b18d463ab761d9369e21aaf6ec1c2764/aHR0cHM6Ly81ZDBjNzNmODdkMzc4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDYvOWVmNGI2ZWIxMDQ0NTIyY2ZkNDQ5NGE3YzgwNmMyYjQuanBn.jpg'); background-repeat:no-repeat; background-size:cover; background-attachment:scroll; background-position:center center;">
+					<div style="max-width: 1280px;height: 460px;margin: 0 auto;">
+						<ell x_title="ABOUT US"></ell>
+					</div>
+				</div>
+				<div style="padding: 100px 0;">
+					<div class="clearfix" style="max-width: 1280px;margin: 0 auto; max-height: 631px;">
+						<p style="padding-right: 35px; font-family:微软雅黑;font-size:12px;font-weight:normal;font-style:normal;color:#8d9095; float: left; width: 360px;height: 186px;line-height: 30px;">当今最领先的响应式自助建站平台，我们的流线式网页布局设计方案和可视化图文内容编辑模式让网站制作和维护成为一件轻松惬意的事。无论您是普通互联网用户， 还是专业网站制作人员，都能使用起飞页设计出最具专业水准的网站。想创建一个简单的单页式站点，还是一个专业的公司网站，亦或是一个别具一格的博客？起飞页可以满足您的所有需求。</p>
+						<p style="padding-right: 35px;font-family:微软雅黑;font-size:12px;font-weight:normal;font-style:normal;color:#8d9095; float: left; width: 360px;height: 186px;line-height: 30px;">起飞页提供了海量精美网站模板和成品网站，几乎覆盖了当今各个行业，您只需在模板上进行少量修改，即可完成自己的网站，起飞页用户的最短建站时间纪录为30分钟。起飞页的核心竞争力来自于它集流线式布局方案与可视化内容编辑于一体，支持打字传图，不需要专业编写代码，也没有其他建站工具的层叠式烦恼，您可以随心所欲创建区块、添加组件…</p>
+						<lee5></lee5>
+					</div>
+				</div>
+				<div style="padding: 100px 0;">
+					<div style="text-align: center;">
+						<h3 style="font-family: Oswald; font-size: 36px;color: #000000;">TOUR GUIDE</h3>
+						<div style="position:relative;width:100%; padding: 12px 0 30px 0;height: 32px;">
+							<span style="display:inline-block; overflow:hidden;border-bottom-style:solid;width:36px;border-bottom-width:6px;border-bottom-color:#379cf4;margin-right:20px;"></span>
+							<div style=" display:inline-block;font-size:14px;font-weight:normal;font-style:normal;color:#596e80;">
+								旅行顾问推荐最好玩儿的地方
+							</div>
+							<span style="display:inline-block; overflow:hidden;border-bottom-style:solid;width:36px;border-bottom-width:6px;border-bottom-color:#379cf4;margin-left:20px;"></span>
+						</div>
+					</div>
+					<div style="width: 1280px;min-height: 588px; margin: 0 auto;">
+						<lee6></lee6>
+					</div>
+				</div>
+			</div>
+		</template>
+		<template id="no3">
+			<div>
+				<div>
+					<div style="width: 100%;min-height: 460px;background-image: url('https://ccdn.goodq.top/caches/b18d463ab761d9369e21aaf6ec1c2764/aHR0cHM6Ly81ZDBjNzNmODdkMzc4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDYvOWVmNGI2ZWIxMDQ0NTIyY2ZkNDQ5NGE3YzgwNmMyYjQuanBn.jpg'); background-repeat:no-repeat; background-size:cover; background-attachment:scroll; background-position:center center;">
+						<div style="max-width: 1280px;height: 460px;margin: 0 auto;">
+							<ell x_title="DESTINATION"></ell>
+						</div>
+					</div>
+					<div>
+						<div style="padding-top: 90px;height: 1100px;background: #f3faff;">
+							<div style="width: 1280px;margin: 0 auto;">
+								<div>
+									<lee8 :boxs='arr'></lee8>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</template>
+		<template id="no4">
+			<div>
+				<div>
+					<div style="width: 100%;min-height: 460px;background-image: url('https://ccdn.goodq.top/caches/b18d463ab761d9369e21aaf6ec1c2764/aHR0cHM6Ly81ZDBjNzNmODdkMzc4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDYvOWVmNGI2ZWIxMDQ0NTIyY2ZkNDQ5NGE3YzgwNmMyYjQuanBn.jpg'); background-repeat:no-repeat; background-size:cover; background-attachment:scroll; background-position:center center;">
+						<div style="max-width: 1280px;height: 460px;margin: 0 auto;">
+							<ell x_title="TRAVEL GUIDE"></ell>
+						</div>
+					</div>
+					<div style="padding: 100px 0;">
+						<div class="clearfix" style="max-width: 1280px;margin: 0 auto; max-height: 631px;">
+							<p style="padding-right: 35px; font-family:微软雅黑;font-size:12px;font-weight:normal;font-style:normal;color:#8d9095; float: left; width: 360px;height: 186px;line-height: 30px;">当今最领先的响应式自助建站平台，我们的流线式网页布局设计方案和可视化图文内容编辑模式让网站制作和维护成为一件轻松惬意的事。无论您是普通互联网用户， 还是专业网站制作人员，都能使用起飞页设计出最具专业水准的网站。想创建一个简单的单页式站点，还是一个专业的公司网站，亦或是一个别具一格的博客？起飞页可以满足您的所有需求。</p>
+							<p style="padding-right: 35px;font-family:微软雅黑;font-size:12px;font-weight:normal;font-style:normal;color:#8d9095; float: left; width: 360px;height: 186px;line-height: 30px;">起飞页提供了海量精美网站模板和成品网站，几乎覆盖了当今各个行业，您只需在模板上进行少量修改，即可完成自己的网站，起飞页用户的最短建站时间纪录为30分钟。起飞页的核心竞争力来自于它集流线式布局方案与可视化内容编辑于一体，支持打字传图，不需要专业编写代码，也没有其他建站工具的层叠式烦恼，您可以随心所欲创建区块、添加组件…</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</template>
+		<template id="no5">
+			<div>
+				<div>
+					<div style="width: 100%;min-height: 460px;background-image: url('https://ccdn.goodq.top/caches/b18d463ab761d9369e21aaf6ec1c2764/aHR0cHM6Ly81ZDBjNzNmODdkMzc4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDYvOWVmNGI2ZWIxMDQ0NTIyY2ZkNDQ5NGE3YzgwNmMyYjQuanBn.jpg'); background-repeat:no-repeat; background-size:cover; background-attachment:scroll; background-position:center center;">
+						<div style="max-width: 1280px;height: 460px;margin: 0 auto;">
+							<ell x_title="CONTACT"></ell>
+						</div>
+					</div>
+					<div style="padding: 100px 0;">
+						<div style="margin: 0 auto; width:1280px;height:400px;border:#ccc solid 1px;" id="dituContent"></div>
+					</div>
+				</div>
+			</div>
+		</template>
+		<template id="lee2">
+			<div>
+				<div style="margin: 0 auto;">
+					<div style="margin: 0;" class="swiper-container">
+						<div class="swiper-wrapper">
+							<div class="swiper-slide" v-for="i in arr"><img :src="i" alt=""></div>
+						</div>
+						<!-- Add Arrows -->
+						<div class="swiper-button-next"></div>
+						<div class="swiper-button-prev"></div>
+					</div>
+				</div>
+			</div>
+		</template>
+		<template id="ell">
+			<div>
+				<div style="padding-top: 180px;text-align: center;">
+					<h3 style="font-family: Oswald; font-size: 44px;color: #ffffff;">{{title}}</h3>
+					<div style="position:relative;width:100%; margin-top: 50px;">
+						<span style="display:inline-block; overflow:hidden;border-bottom-style:solid;width:300px;border-bottom-width:2px;border-bottom-color:#379cf4;margin-right:20px;"></span>
+						<div style=" display:inline-block;font-family:微软雅黑;font-size:16px;font-weight:normal;font-style:normal;color:#ffffff;">背上行囊去远方，那个梦寐以求的目的地。</div>
+						<span style="display:inline-block; overflow:hidden;border-bottom-style:solid;width:300px;border-bottom-width:2px;border-bottom-color:#379cf4;margin-left:20px;"></span>
+					</div>
+				</div>
+			</div>
+		</template>
+		<template id="lee3">
+			<div>
+				<div style="margin: 0 auto;">
+					<div style="margin: 0;width: 100%;height: 490px; position: static;" class="swiper-container">
+						<div class="swiper-wrapper">
+							<div class="swiper-slide" style="width: 380px;height: 240px;" v-for="i in arr"><img :src="i.img" alt="">
+								<div style="color: #13304a;font-size: 20px;font-family: 微软雅黑;font-weight: 700;padding-top: 45px;padding-bottom: 4px;">{{i.name}}</div>
+								<div style="color: #379cf4;font-size: 14px;font-family: verdana;padding: 10px 0px 0px 0px;">Distance:4.3km　　Days:4</div>
+								<div style="color: #596e80;font-size: 12px;word-break: break-all;font-family: 微软雅黑;line-height: 28px;padding-top: 25px;">当今最领先的响应式自助建站平台，我们的流线式网页布局设计方案和可视化图文内容编辑模式让...</div>
+							</div>
+						</div>
+						<!-- Add Arrows -->
+						<div style=" right: 206px; top: 450px; background: #379cf4; color: #ffffff;padding: 10px;" class="swiper-button-next"></div>
+						<div style=" left: 980px; top: 450px;background: #379cf4; color: #ffffff; padding: 10px;" class="swiper-button-prev"></div>
+					</div>
+				</div>
+			</div>
+		</template>
+		<template id="lee5">
+			<div>
+				<div class="block">
+					<el-carousel trigger="click" height="170px">
+						<el-carousel-item v-for="item in arr1" :key="item">
+							<!--<h3 class="small">{{ item }}</h3>-->
+							<img :src="item" alt="" style="height: 182px;width: 100%;" />
+						</el-carousel-item>
+					</el-carousel>
+				</div>
+			</div>
+		</template>
+		<template id="lee6">
+			<div>
+				<div v-for="i in arr1" style="padding: 60px; float: left;max-width: 25%;">
+					<img :src="i" style="width: 200px; height: 200px;" alt="">
+				</div>
+			</div>
+		</template>
+		<template id="lee8">
+			<div>
+				<div style="width: 359px;height: 467px;float: left;margin: 0 30px;margin-bottom: 50px;background: #fff;" v-for="i in a">
+					<div style="width: 100%;height: 224px;">
+						<img style="width: 100%;height: 100%;" :src="i.img" alt="" />
+					</div>
+					<div>
+						<div style="padding-top:25px;padding-left:20px;padding-right:20px;color:#13304a;line-height:20px; vertical-align: top; text-align:left;width:100%;color:#13304a;font-size:20px;font-family:微软雅黑;line-height:26px;font-weight: bold; ">{{i.name}}</div>
+						<div style="color:#379cf4;font-size:14px;font-family:verdana;padding:6px 20px 5px 20px;">Distance:8.5km　　Days:7</div>
+						<div style="color:#596e80;font-size:12px;font-family:微软雅黑;line-height:26px;padding-top:20px;padding-bottom:20px;padding-left:20px;padding-right:20px;">当今最领先的响应式自助建站平台，我们的流线式网页布局设计方案和可视化图文内容编辑模式让网站制作和维护成为一件轻松惬意的事。</div>
+					</div>
+				</div>
+			</div>
+		</template>
+	</body>
+	<script src="vue.js "></script>
+	<script src="vue-router.js "></script>
+	<script src="swiper.min.js"></script>
+	<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+	<script type="text/javascript" src="http://api.map.baidu.com/api?key=&v=1.1&services=true"></script>
+	<script>
+		Vue.component('lee8', {
+			template: '#lee8',
+			props: ['boxs'],
+			data() {
+				return {
+					a: this.boxs
+				}
+			}
+		})
+		Vue.component('lee6', {
+			template: '#lee6',
+			data() {
+				return {
+					arr1: [
+						'http://5d0c73f87d378.t73.qifeiye.com/qfy-content/uploads/2019/06/981992fc1f31665bc6b1a31170e4ee58.jpg',
+						'http://5d0c73f87d378.t73.qifeiye.com/qfy-content/uploads/2019/06/725349ba89c48e85520169938959fb0d.jpg',
+						'http://5d0c73f87d378.t73.qifeiye.com/qfy-content/uploads/2019/06/ffbc7e01adacf4a5efeae1497f60f23e.jpg',
+						'http://5d0c73f87d378.t73.qifeiye.com/qfy-content/uploads/2019/06/3d69a2b1eebc5b1b21edbe46de538489.jpg',
+						'http://5d0c73f87d378.t73.qifeiye.com/qfy-content/uploads/2019/06/981992fc1f31665bc6b1a31170e4ee58.jpg',
+						'http://5d0c73f87d378.t73.qifeiye.com/qfy-content/uploads/2019/06/725349ba89c48e85520169938959fb0d.jpg',
+						'http://5d0c73f87d378.t73.qifeiye.com/qfy-content/uploads/2019/06/ffbc7e01adacf4a5efeae1497f60f23e.jpg',
+						'http://5d0c73f87d378.t73.qifeiye.com/qfy-content/uploads/2019/06/3d69a2b1eebc5b1b21edbe46de538489.jpg',
+					]
+				}
+			}
+		})
+		Vue.component('lee5', {
+			template: '#lee5',
+			data() {
+				return {
+					arr1: [
+						'https://ccdn.goodq.top/caches/b18d463ab761d9369e21aaf6ec1c2764/aHR0cHM6Ly81ZDBjNzNmODdkMzc4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDYvYTMxY2EwYjEyY2ZhYTY0YTA3ZDZhNjVjMGIzYjc4NGYtNjAweDMwMC5qcGc_p_p100_p_3D.jpg',
+						'https://ccdn.goodq.top/caches/b18d463ab761d9369e21aaf6ec1c2764/aHR0cHM6Ly81ZDBjNzNmODdkMzc4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDYvYWMwNjRjY2Y5NDJmNDNiNTY1YzZhODY5MzMxMjM1ZWItNjAweDMwMC5qcGc_p_p100_p_3D.jpg',
+						'https://ccdn.goodq.top/caches/b18d463ab761d9369e21aaf6ec1c2764/aHR0cHM6Ly81ZDBjNzNmODdkMzc4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDYvMzE0Mzg3ZGQ4MmQxNTJjMmQ5ZmZhZTNjMWUyOTM4MjYtNjAweDMwMC5qcGc_p_p100_p_3D.jpg'
+					]
+				}
+			}
+		})
+		Vue.component('ell', {
+			template: '#ell',
+			props: ['x_title'],
+			data() {
+				return {
+					title: this.x_title
+				}
+			}
+
+		})
+		Vue.component('shuzi', {
+			template: '#lee'
+		})
+		Vue.component('lunbo', {
+			template: '#lee2',
+			data() {
+				return {
+					arr: ['https://ccdn.goodq.top/caches/b18d463ab761d9369e21aaf6ec1c2764/aHR0cHM6Ly81ZDBjNzNmODdkMzc4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDYvYWMwNjRjY2Y5NDJmNDNiNTY1YzZhODY5MzMxMjM1ZWItNDAweDI5MC5qcGc_p_p100_p_3D.jpg',
+						'https://ccdn.goodq.top/caches/b18d463ab761d9369e21aaf6ec1c2764/aHR0cHM6Ly81ZDBjNzNmODdkMzc4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDYvMzE0Mzg3ZGQ4MmQxNTJjMmQ5ZmZhZTNjMWUyOTM4MjYtNDAweDI5MC5qcGc_p_p100_p_3D.jpg',
+						'https://ccdn.goodq.top/caches/b18d463ab761d9369e21aaf6ec1c2764/aHR0cHM6Ly81ZDBjNzNmODdkMzc4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDYvYmNmMDU3ZWVmZDhlMjJjZmQxMWYzNGNiMzIzZjhhODAtNDAweDI5MC5qcGc_p_p100_p_3D.jpg',
+						'https://ccdn.goodq.top/caches/b18d463ab761d9369e21aaf6ec1c2764/aHR0cHM6Ly81ZDBjNzNmODdkMzc4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDYvNTc5MTNjNzVjMWU3OGRjOGVhNWI0MTRmMDg0MWFmNDUtNDAweDI5MC5qcGc_p_p100_p_3D.jpg',
+						'https://ccdn.goodq.top/caches/b18d463ab761d9369e21aaf6ec1c2764/aHR0cHM6Ly81ZDBjNzNmODdkMzc4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDYvOTgwYzcyMWVkNzI1NzRiMzNkMjUzZTU5Yjg2ZDJmNjctNDAweDI5MC5qcGc_p_p100_p_3D.jpg'
+					]
+				}
+			}
+		})
+		Vue.component('lunbo2', {
+			template: '#lee3',
+			data() {
+				return {
+
+					arr: [{
+						img: 'https://ccdn.goodq.top/caches/b18d463ab761d9369e21aaf6ec1c2764/aHR0cHM6Ly81ZDBjNzNmODdkMzc4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDYvOTgwYzcyMWVkNzI1NzRiMzNkMjUzZTU5Yjg2ZDJmNjctODAweDUwMC5qcGc_p_p100_p_3D.jpg',
+						name: '梵净山'
+					}, {
+						img: 'https://ccdn.goodq.top/caches/b18d463ab761d9369e21aaf6ec1c2764/aHR0cHM6Ly81ZDBjNzNmODdkMzc4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDYvYTMxY2EwYjEyY2ZhYTY0YTA3ZDZhNjVjMGIzYjc4NGYtODAweDUwMC5qcGc_p_p100_p_3D.jpg',
+						name: '玉龙沙湖'
+					}, {
+						img: 'https://ccdn.goodq.top/caches/b18d463ab761d9369e21aaf6ec1c2764/aHR0cHM6Ly81ZDBjNzNmODdkMzc4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDYvNTc5MTNjNzVjMWU3OGRjOGVhNWI0MTRmMDg0MWFmNDUtODAweDUwMC5qcGc_p_p100_p_3D.jpg',
+						name: '格凸河'
+
+					}, {
+						img: 'https://ccdn.goodq.top/caches/b18d463ab761d9369e21aaf6ec1c2764/aHR0cHM6Ly81ZDBjNzNmODdkMzc4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDYvYmNmMDU3ZWVmZDhlMjJjZmQxMWYzNGNiMzIzZjhhODAtODAweDUwMC5qcGc_p_p100_p_3D.jpg',
+						name: '乌兰布统草原'
+					}, {
+						img: 'https://ccdn.goodq.top/caches/b18d463ab761d9369e21aaf6ec1c2764/aHR0cHM6Ly81ZDBjNzNmODdkMzc4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDYvNTc5MTNjNzVjMWU3OGRjOGVhNWI0MTRmMDg0MWFmNDUtNDAweDI5MC5qcGc_p_p100_p_3D.jpg',
+						name: '青龙洞'
+					}, {
+						img: 'https://ccdn.goodq.top/caches/b18d463ab761d9369e21aaf6ec1c2764/aHR0cHM6Ly81ZDBjNzNmODdkMzc4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDYvYWMwNjRjY2Y5NDJmNDNiNTY1YzZhODY5MzMxMjM1ZWItODAweDUwMC5qcGc_p_p100_p_3D.jpg',
+						name: '禁止大峡谷'
+					}]
+
+				}
+			}
+		})
+		// 路由代码
+		var router = new VueRouter({
+			routes: [{
+				path: '/',
+				component: {
+					template: '#no1'
+				}
+			}, {
+				path: '/no2',
+				component: {
+					template: '#no2'
+				}
+			}, {
+				path: '/no3',
+				component: {
+					template: '#no3',
+					data() {
+						return {
+							arr: [{
+									img: 'https://ccdn.goodq.top/caches/b18d463ab761d9369e21aaf6ec1c2764/aHR0cHM6Ly81ZDBjNzNmODdkMzc4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDYvMzE0Mzg3ZGQ4MmQxNTJjMmQ5ZmZhZTNjMWUyOTM4MjYtODAweDUwMC5qcGc_p_p100_p_3D.jpg',
+									name: '织金大峡谷'
+								},
+								{
+									img: 'https://ccdn.goodq.top/caches/b18d463ab761d9369e21aaf6ec1c2764/aHR0cHM6Ly81ZDBjNzNmODdkMzc4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDYvYWMwNjRjY2Y5NDJmNDNiNTY1YzZhODY5MzMxMjM1ZWItODAweDUwMC5qcGc_p_p100_p_3D.jpg',
+									name: '青龙洞'
+								},
+								{
+									img: 'https://ccdn.goodq.top/caches/b18d463ab761d9369e21aaf6ec1c2764/aHR0cHM6Ly81ZDBjNzNmODdkMzc4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDYvYmNmMDU3ZWVmZDhlMjJjZmQxMWYzNGNiMzIzZjhhODAtODAweDUwMC5qcGc_p_p100_p_3D.jpg',
+									name: '乌兰布统草原'
+								},
+								{
+									img: 'https://ccdn.goodq.top/caches/b18d463ab761d9369e21aaf6ec1c2764/aHR0cHM6Ly81ZDBjNzNmODdkMzc4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDYvNTc5MTNjNzVjMWU3OGRjOGVhNWI0MTRmMDg0MWFmNDUtODAweDUwMC5qcGc_p_p100_p_3D.jpg',
+									name: '阁凸河'
+								},
+								{
+									img: 'https://ccdn.goodq.top/caches/b18d463ab761d9369e21aaf6ec1c2764/aHR0cHM6Ly81ZDBjNzNmODdkMzc4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDYvYTMxY2EwYjEyY2ZhYTY0YTA3ZDZhNjVjMGIzYjc4NGYtODAweDUwMC5qcGc_p_p100_p_3D.jpg',
+									name: '玉龙沙河'
+								},
+								{
+									img: 'https://ccdn.goodq.top/caches/b18d463ab761d9369e21aaf6ec1c2764/aHR0cHM6Ly81ZDBjNzNmODdkMzc4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDYvOTgwYzcyMWVkNzI1NzRiMzNkMjUzZTU5Yjg2ZDJmNjctODAweDUwMC5qcGc_p_p100_p_3D.jpghttps://ccdn.goodq.top/caches/b18d463ab761d9369e21aaf6ec1c2764/aHR0cHM6Ly81ZDBjNzNmODdkMzc4LnQ3My5xaWZlaXllLmNvbS9xZnktY29udGVudC91cGxvYWRzLzIwMTkvMDYvMzE0Mzg3ZGQ4MmQxNTJjMmQ5ZmZhZTNjMWUyOTM4MjYtODAweDUwMC5qcGc_p_p100_p_3D.jpg',
+									name: '梵净山'
+								},
+							]
+						}
+					}
+
+				}
+			}, {
+				path: '/no4',
+				component: {
+					template: '#no4'
+				}
+			}, {
+				path: '/no5',
+				component: {
+					template: '#no5'
+				}
+			}]
+		})
+		new Vue({
+			el: '#box',
+			router,
+
+		})
+		var swiper = new Swiper('.swiper-container', {
+			slidesPerView: 2,
+			spaceBetween: 30,
+			loop: true,
+			navigation: {
+				nextEl: '.swiper-button-next',
+				prevEl: '.swiper-button-prev',
+			},
+		});
+		//创建和初始化地图函数：
+		function initMap() {
+			createMap(); //创建地图
+			setMapEvent(); //设置地图事件
+			addMapControl(); //向地图添加控件
+		}
+
+		//创建地图函数：
+		function createMap() {
+			var map = new BMap.Map("dituContent"); //在百度地图容器中创建一个地图
+			var point = new BMap.Point(116.06335, 39.641239); //定义一个中心点坐标
+			map.centerAndZoom(point, 16); //设定地图的中心点和坐标并将地图显示在地图容器中
+			window.map = map; //将map变量存储在全局
+		}
+
+		//地图事件设置函数：
+		function setMapEvent() {
+			map.enableDragging(); //启用地图拖拽事件，默认启用(可不写)
+			map.enableScrollWheelZoom(); //启用地图滚轮放大缩小
+			map.enableDoubleClickZoom(); //启用鼠标双击放大，默认启用(可不写)
+			map.enableKeyboard(); //启用键盘上下左右键移动地图
+		}
+
+		//地图控件添加函数：
+		function addMapControl() {
+			//向地图中添加缩放控件
+			var ctrl_nav = new BMap.NavigationControl({
+				anchor: BMAP_ANCHOR_TOP_LEFT,
+				type: BMAP_NAVIGATION_CONTROL_ZOOM
+			});
+			map.addControl(ctrl_nav);
+			//向地图中添加缩略图控件
+			var ctrl_ove = new BMap.OverviewMapControl({
+				anchor: BMAP_ANCHOR_BOTTOM_RIGHT,
+				isOpen: 0
+			});
+			map.addControl(ctrl_ove);
+			//向地图中添加比例尺控件
+			var ctrl_sca = new BMap.ScaleControl({
+				anchor: BMAP_ANCHOR_TOP_LEFT
+			});
+			map.addControl(ctrl_sca);
+		}
+
+		initMap(); //创建和初始化地图
+	</script>
+
+</html>

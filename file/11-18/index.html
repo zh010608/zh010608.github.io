@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .no1-enter,
+        .no1-leave-to {
+            opacity: 0;
+            top: 120px !important;
+        }
+        
+        .no1-enter-active,
+        .no1-leave-active {
+            transition: all .3s;
+        }
+        
+        .no2-enter,
+        .no2-leave-to {
+            opacity: 0;
+            left: -120px !important;
+        }
+        
+        .no2-enter-active,
+        .no2-leave-active {
+            transition: all .3s;
+        }
+        
+        .no3-enter,
+        .no3-leave-to {
+            opacity: 0;
+            top: 120px !important;
+        }
+        
+        .no3-enter-active,
+        .no3-leave-active {
+            transition: all .3s;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        <lee></lee>
+    </div>
+    <template id="lee">
+			<div style="position: relative;cursor: pointer;">
+				<div style="line-height: 60px;text-align: center;background: #000000;color: #FFFFFF;" @click="c_no1">
+					  首页
+				</div>
+				<transition :name="t_t1">
+				<div style="position: absolute;top: 60px;left: 0;width: 100%;background: #000;z-index: 2;" v-show="no1_t" >
+				      <div v-for="i in arr" style="color: #FFFFFF;line-height: 50px;text-align: center;position: relative;" @click="c_no2(i.arr)">
+				      	 {{i.title}}  <span style="position: absolute;top: 0;right: 40px;" v-if="i.arr.length">></span>
+				      </div>
+				</div>
+				</transition>
+				<transition name="no3">
+				<div style="position: absolute;top: 60px;left: 0;width: 100%;background: #000;" v-show="no2_t">
+					 <div style="color: #FFFFFF;line-height: 50px;text-align: center;position: relative;" @click="c_no3">
+				      	返回上一级  
+				      </div>
+				      <div v-for="i in z_arr" style="color: #FFFFFF;line-height: 50px;text-align: center;position: relative;">
+				      	 {{i}}  
+				      </div>
+				</div>
+				</transition>
+			</div>
+		</template>
+</body>
+<script src="vue.js"></script>
+<script>
+    Vue.component('lee', {
+        template: '#lee',
+        methods: {
+            c_no1() {
+
+                if (this.no2_t) {
+                    this.no2_t = false
+                } else {
+                    this.t_t1 = 'no1'
+                    this.no1_t = !this.no1_t
+                }
+            },
+            c_no2(arr) {
+                this.t_t1 = 'no2'
+                this.no1_t = false
+                this.z_arr = arr
+                setTimeout(() => {
+                    this.no2_t = true
+                }, 200)
+            },
+            c_no3() {
+                this.no2_t = false
+                this.no1_t = true
+            }
+        },
+        data() {
+            return {
+                no1_t: false,
+                no2_t: false,
+                t_t1: 'no1',
+                z_arr: '',
+                arr: [{
+                    title: '首页',
+                    arr: []
+                }, {
+                    title: '软件产品',
+                    arr: ['no1', 'no2']
+                }, {
+                    title: 'no3',
+                    arr: ['no1']
+                }, {
+                    title: 'no4',
+                    arr: []
+                }, ]
+            }
+        }
+    })
+
+
+    new Vue({
+        el: "#box"
+    })
+</script>
+
+</html>
