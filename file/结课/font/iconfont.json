@@ -1,0 +1,114 @@
+{
+  "id": "1427015",
+  "name": "green-tea",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "307774",
+      "name": "搜索",
+      "font_class": "icon01",
+      "unicode": "e617",
+      "unicode_decimal": 58903
+    },
+    {
+      "icon_id": "460455",
+      "name": "搜索",
+      "font_class": "comiissousuo",
+      "unicode": "e605",
+      "unicode_decimal": 58885
+    },
+    {
+      "icon_id": "1199430",
+      "name": "微信",
+      "font_class": "weixin",
+      "unicode": "e643",
+      "unicode_decimal": 58947
+    },
+    {
+      "icon_id": "2688107",
+      "name": "上箭头",
+      "font_class": "icon-xia",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    },
+    {
+      "icon_id": "2993641",
+      "name": "购物车",
+      "font_class": "gouwuche",
+      "unicode": "e67c",
+      "unicode_decimal": 59004
+    },
+    {
+      "icon_id": "3351855",
+      "name": "上箭头",
+      "font_class": "up",
+      "unicode": "e606",
+      "unicode_decimal": 58886
+    },
+    {
+      "icon_id": "5995629",
+      "name": "移除",
+      "font_class": "yichu",
+      "unicode": "e701",
+      "unicode_decimal": 59137
+    },
+    {
+      "icon_id": "6561020",
+      "name": "上箭头",
+      "font_class": "arrow-left",
+      "unicode": "e601",
+      "unicode_decimal": 58881
+    },
+    {
+      "icon_id": "6850728",
+      "name": "我 的",
+      "font_class": "bx-wode",
+      "unicode": "e602",
+      "unicode_decimal": 58882
+    },
+    {
+      "icon_id": "7722487",
+      "name": "微博",
+      "font_class": "weibo",
+      "unicode": "e62a",
+      "unicode_decimal": 58922
+    },
+    {
+      "icon_id": "7926872",
+      "name": "我 的",
+      "font_class": "wode",
+      "unicode": "e604",
+      "unicode_decimal": 58884
+    },
+    {
+      "icon_id": "8485367",
+      "name": "右三角",
+      "font_class": "yousanjiao",
+      "unicode": "e659",
+      "unicode_decimal": 58969
+    },
+    {
+      "icon_id": "9191464",
+      "name": "爱心",
+      "font_class": "aixin",
+      "unicode": "e607",
+      "unicode_decimal": 58887
+    },
+    {
+      "icon_id": "9244378",
+      "name": "暂停",
+      "font_class": "zanting",
+      "unicode": "e622",
+      "unicode_decimal": 58914
+    },
+    {
+      "icon_id": "9995892",
+      "name": "上箭头",
+      "font_class": "up1",
+      "unicode": "e603",
+      "unicode_decimal": 58883
+    }
+  ]
+}
